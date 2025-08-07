@@ -8,8 +8,8 @@
     </head>
 
     <body>
-        <h1>About</h1>
-        <p>this is the About page.</p>
+        <h1>Services</h1>
+        <p>Hello from services page.</p>
     </body>
     
 </html>
