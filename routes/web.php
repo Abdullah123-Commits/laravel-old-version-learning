@@ -19,13 +19,18 @@ Route::get('/', function () {
     // return view('welcome');
     return '<h1>Hello World</h1>';
 });
-*/
 
 Route::get('/about', function () {
     // return view('welcome');
     return view ('pages.about');
 });
+*/
+
+
 
 Route::get('/', 'PagesController@index');
+Route::get('/about', 'PagesController@about');
+Route::get('/services', 'PagesController@services');
+
 
 
