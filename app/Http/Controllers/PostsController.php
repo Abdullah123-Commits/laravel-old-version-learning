@@ -25,7 +25,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -36,7 +36,21 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+        // Create Post
+        $post = new Post;
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        // $post->id = auth()->user()->id;
+        $post->save();
+        // return redirect("{{url('/posts')}}")->with('success', 'Post Created');   SYNTAX ERRR
+        return redirect()->route('posts.index')->with('success', 'Post Created');
+
+
     }
 
     /**
